@@ -44,6 +44,12 @@ public class ExpenseTrackerController {
     refresh();
     return true;
   }
-  
+
   // Other controller methods
+  public boolean deleteTransaction(int index_number) {
+    model.removeTransaction(index_number);
+    view.getTableModel().removeRow(index_number); // the row number also start from 0
+    refresh();
+    return true;
+  }
 }

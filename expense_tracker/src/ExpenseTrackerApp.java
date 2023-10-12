@@ -34,6 +34,30 @@ public class ExpenseTrackerApp {
       }
     });
 
+    view.getDeleteTransactionBtn().addActionListener(e -> {
+      boolean is_deleted = deleteTransaction(controller, view);
+
+      if (!is_deleted) {
+        JOptionPane.showMessageDialog(view, "There's no such transaction in the table!");
+        view.toFront();
+      }
+    });
+  }
+
+  private static boolean deleteTransaction(ExpenseTrackerController controller, ExpenseTrackerView view) {
+    int row_index = view.getTransactionsTable().getSelectedRow();
+
+    if (checkRowNum(view, row_index)) {
+      boolean is_deleted = controller.deleteTransaction(row_index);
+      return is_deleted;
+    } else {
+      return false;
+    }
+  }
+
+  private static boolean checkRowNum(ExpenseTrackerView view, int row_index) {
+    int row_counts = view.getTransactionsTable().getRowCount();
+    return (row_index < row_counts);
   }
 
 }
