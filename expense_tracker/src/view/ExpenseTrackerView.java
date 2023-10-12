@@ -133,4 +133,8 @@ public class ExpenseTrackerView extends JFrame {
   public JButton getDeleteTransactionBtn() {
     return deleteTransactionBtn;
   }
+
+  public void deleteTransactionRow(int index_number) {
+    this.getTableModel().removeRow(index_number);
+  }
 }
