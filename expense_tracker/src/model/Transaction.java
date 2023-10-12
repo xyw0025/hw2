@@ -21,11 +21,13 @@ public class Transaction {
   }
 
   public String getCategory() {
-    return category;
+    final String copyCategory = String.valueOf(category);
+    return copyCategory;
   }
   
   public String getTimestamp() {
-    return timestamp;
+    final String copyTimeStamp = String.valueOf(timestamp);
+    return copyTimeStamp;
   }
 
   private String generateTimestamp() {
