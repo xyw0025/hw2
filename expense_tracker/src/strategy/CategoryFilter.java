@@ -1,6 +1,6 @@
 package strategy;
 
-class CategoryFilter extends TransactionFilter
+class CategoryFilter implements TransactionFilter
 {   
     String filterCategory;
 
