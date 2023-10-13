@@ -6,7 +6,7 @@ import model.Transaction;
 
 public class AmountFilter implements TransactionFilter
 {
-    String filterAmount;
+    double filterAmount;
 
     public AmountFilter(double filterAmount)
     {
@@ -15,7 +15,7 @@ public class AmountFilter implements TransactionFilter
 
     public List<Transaction> filter(List<Transaction> transactions)
     {
-        List<Employee> transactionsAboveFilterAmount = transactions.stream()
+        List<Transaction> transactionsAboveFilterAmount = transactions.stream()
                                                     .filter(q -> q.getAmount() >= filterAmount)
                                                     .collect(Collectors.toList());
         return transactionsAboveFilterAmount;

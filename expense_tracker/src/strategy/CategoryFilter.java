@@ -15,7 +15,7 @@ public class CategoryFilter implements TransactionFilter
 
     public List<Transaction> filter(List<Transaction> transactions)
     {
-        List<Employee> transactionsWithFilterCategory = transactions.stream()
+        List<Transaction> transactionsWithFilterCategory = transactions.stream()
                                                     .filter(q -> q.getCategory().equals(filterCategory))
                                                     .collect(Collectors.toList());
         return transactionsWithFilterCategory;
