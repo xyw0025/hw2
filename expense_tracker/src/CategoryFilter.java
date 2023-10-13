@@ -9,9 +9,9 @@ class CategoryFilter extends TransactionFilter
 
     public List<Transaction> filter(List<Transaction> transactions)
     {
-        List<Employee> employeeWith90MarksAndAbove = transactions.stream()
-                                                    .filter(q -> q.getCategory()
-                                                    .equals(filterCategory))
+        List<Employee> transactionsWithFilterCategory = transactions.stream()
+                                                    .filter(q -> q.getCategory().equals(filterCategory))
                                                     .collect(Collectors.toList());
+        return transactionsWithFilterCategory;
     }
 }
