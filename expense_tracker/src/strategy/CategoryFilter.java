@@ -1,3 +1,5 @@
+package strategy;
+
 class CategoryFilter extends TransactionFilter
 {   
     String filterCategory;

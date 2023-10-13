@@ -1,3 +1,5 @@
+package strategy;
+
 class AmountFilter extends TransactionFilter
 {
     String filterAmount;
