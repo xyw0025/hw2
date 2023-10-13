@@ -51,7 +51,7 @@ public class ExpenseTrackerController {
 
   /**
    * @param amount amount entered by the user in the amount field in the view
-   * @param catgory category entered by the user
+   * @param category category entered by the user
    * @return boolean indicating whether the transaction was added successfully in the model and the view was updated 
    */
   public boolean addTransaction(double amount, String category) {

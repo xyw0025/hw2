@@ -181,7 +181,7 @@ public class ExpenseTrackerView extends JFrame {
 
   /**
    * Function to set value to the categoryField
-   * @param amountField default value to be assigned to the categoryField
+   * @param categoryField default value to be assigned to the categoryField
    */
   public void setCategoryField(JTextField categoryField) {
     this.categoryField = categoryField;
