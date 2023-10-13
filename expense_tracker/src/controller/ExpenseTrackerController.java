@@ -61,7 +61,7 @@ public class ExpenseTrackerController {
       if (!InputValidation.isValidAmount(filterAmount)) {
       return false;
       }
-      List<Transaction> filteredTransactions = new AmountFilter(filterAmount).filter(model.getTransactions());
+      List<Transaction> filteredTransactions = (new AmountFilter(filterAmount)).filter(model.getTransactions());
       view.setBackgroundColor(filteredTransactions);
     }
     
@@ -70,7 +70,7 @@ public class ExpenseTrackerController {
       if (!InputValidation.isValidCategory(filterCategory)) {
       return false;
     }
-      List<Transaction> filteredTransactions = new CategoryFilter(filterCategory).filter(model.getTransactions());
+      List<Transaction> filteredTransactions = (new CategoryFilter(filterCategory)).filter(model.getTransactions());
       view.setBackgroundColor(filteredTransactions);
     }
     else

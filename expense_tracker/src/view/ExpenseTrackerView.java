@@ -72,6 +72,7 @@ public class ExpenseTrackerView extends JFrame {
     inputPanel.add(filterCategoryField);
     inputPanel.add(addTransactionBtn);
     inputPanel.add(deleteTransactionBtn);
+    inputPanel.add(filterTransactionBtn);
   
     JPanel buttonPanel = new JPanel();
     buttonPanel.add(addTransactionBtn);
