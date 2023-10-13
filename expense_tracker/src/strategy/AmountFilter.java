@@ -3,7 +3,7 @@ package strategy;
 import java.util.*;
 import model.Transaction;
 
-class AmountFilter implements TransactionFilter
+public class AmountFilter implements TransactionFilter
 {
     String filterAmount;
 

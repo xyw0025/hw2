@@ -3,7 +3,7 @@ package strategy;
 import java.util.*;
 import model.Transaction;
 
-class CategoryFilter implements TransactionFilter
+public class CategoryFilter implements TransactionFilter
 {   
     String filterCategory;
 
