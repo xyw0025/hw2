@@ -42,6 +42,18 @@ public class ExpenseTrackerApp {
         view.toFront();
       }
     });
+
+    view.getFilterTransactionBtn().addActionListener(e -> {
+      double filterAmount = view.getFilterAmountField();
+      String filterCategory = view.getFilterCategoryField();
+
+      boolean filtered = controller.applyFilter(filterAmount, filterCategory);
+
+      if (!filtered) {
+        JOptionPane.showMessageDialog(view, "Filters are not valid!");
+        view.toFront();
+      }
+    });
   }
 
   private static boolean deleteTransaction(ExpenseTrackerController controller, ExpenseTrackerView view) {
