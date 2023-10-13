@@ -13,6 +13,8 @@ public class ExpenseTrackerController {
   
   private ExpenseTrackerModel model;
   private ExpenseTrackerView view;
+  private AmountFilter amount_filter;
+  private CategoryFilter category_filter;
 
   public ExpenseTrackerController(ExpenseTrackerModel model, ExpenseTrackerView view) {
     this.model = model;
@@ -61,7 +63,8 @@ public class ExpenseTrackerController {
       if (!InputValidation.isValidAmount(filterAmount)) {
       return false;
       }
-      List<Transaction> filteredTransactions = (new AmountFilter(filterAmount)).filter(model.getTransactions());
+      amount_filter = new AmountFilter(filterAmount);
+      List<Transaction> filteredTransactions = amount_filter.filter(model.getTransactions());
       view.setBackgroundColor(filteredTransactions);
     }
     
@@ -70,13 +73,16 @@ public class ExpenseTrackerController {
       if (!InputValidation.isValidCategory(filterCategory)) {
       return false;
     }
-      List<Transaction> filteredTransactions = (new CategoryFilter(filterCategory)).filter(model.getTransactions());
+      category_filter = new CategoryFilter(filterCategory);
+      List<Transaction> filteredTransactions = category_filter.filter(model.getTransactions());
       view.setBackgroundColor(filteredTransactions);
     }
+
     else
     {
       return false;
     } 
+
   return true;
   }
 }
