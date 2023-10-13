@@ -1,5 +1,8 @@
 package strategy;
 
+import java.util.*;
+import view.Transaction;
+
 class CategoryFilter implements TransactionFilter
 {   
     String filterCategory;
