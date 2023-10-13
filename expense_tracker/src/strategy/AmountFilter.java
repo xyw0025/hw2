@@ -1,6 +1,7 @@
 package strategy;
 
 import java.util.*;
+import java.util.stream.Collectors;
 import model.Transaction;
 
 public class AmountFilter implements TransactionFilter
