@@ -19,6 +19,10 @@ public class ExpenseTrackerModel {
     transactions.remove(t);
   }
 
+  public void removeTransaction(int index) {
+    transactions.remove(index);
+  }
+
   public List<Transaction> getTransactions() {
     final List<Transaction> copyTransactions;
     Collections.copy(transactions, copyTransactions)
