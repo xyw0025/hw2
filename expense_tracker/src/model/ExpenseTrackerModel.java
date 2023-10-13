@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.*;
 
 public class ExpenseTrackerModel {
 
@@ -24,7 +25,7 @@ public class ExpenseTrackerModel {
   }
 
   public List<Transaction> getTransactions() {
-    final List<Transaction> copyTransactions;
+    List<Transaction> copyTransactions = new ArrayList<>(); 
     Collections.copy(transactions, copyTransactions);
     return copyTransactions;
   }
