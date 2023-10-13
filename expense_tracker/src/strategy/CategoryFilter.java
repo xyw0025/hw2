@@ -1,7 +1,7 @@
 package strategy;
 
 import java.util.*;
-import view.Transaction;
+import model.Transaction;
 
 class CategoryFilter implements TransactionFilter
 {   
