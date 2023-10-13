@@ -1,6 +1,6 @@
 class AmountFilter extends TransactionFilter
 {
-    public List<Transaction> filter(List<Transaction>)
+    public List<Transaction> filter(List<Transaction> transactions)
     {
         
     }
