@@ -7,7 +7,7 @@ public class AmountFilter implements TransactionFilter
 {
     String filterAmount;
 
-    public AmountFilter(String filterAmount)
+    public AmountFilter(double filterAmount)
     {
         this.filterAmount = filterAmount;
     }
