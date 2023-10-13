@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.*;
 
 /**
  * Model class performs maintains and updates the transactions list 
@@ -45,8 +46,8 @@ public class ExpenseTrackerModel {
    * @return 
    */
   public List<Transaction> getTransactions() {
-    final List<Transaction> copyTransactions;
-    Collections.copy(transactions, copyTransactions)
+    List<Transaction> copyTransactions = new ArrayList<>(); 
+    Collections.copy(transactions, copyTransactions);
     return copyTransactions;
   }
 
