@@ -8,11 +8,27 @@ import java.util.List;
 
 import model.ExpenseTrackerModel;
 import model.Transaction;
+
+/**
+ * Controller part of the MVC architecture. It consists of components that will be used by the user to interact with the GUI
+ * COntroller modifies the view and updates the model
+ */
 public class ExpenseTrackerController {
   
+  /**
+   * model object - used by controller to make changes in the model 
+   */
   private ExpenseTrackerModel model;
+  /**
+   * view object - will be utilized to update the view
+   */
   private ExpenseTrackerView view;
 
+  /**
+   * Class constructor to initialize class variables - model and view
+   * @param model model to be modified
+   * @param view view to be updated
+   */
   public ExpenseTrackerController(ExpenseTrackerModel model, ExpenseTrackerView view) {
     this.model = model;
     this.view = view;
@@ -20,6 +36,9 @@ public class ExpenseTrackerController {
     // Set up view event handlers
   }
 
+  /**
+   * This function receives updated transactions from model and calls refreshTable to update view
+   */
   public void refresh() {
 
     // Get transactions from model
@@ -30,6 +49,11 @@ public class ExpenseTrackerController {
 
   }
 
+  /**
+   * @param amount amount entered by the user in the amount field in the view
+   * @param catgory category entered by the user
+   * @return boolean indicating whether the transaction was added successfully in the model and the view was updated 
+   */
   public boolean addTransaction(double amount, String category) {
     if (!InputValidation.isValidAmount(amount)) {
       return false;
@@ -45,7 +69,10 @@ public class ExpenseTrackerController {
     return true;
   }
 
-  // Other controller methods
+  /**
+   * @param index_number specifies the index number of transaction to be deleted 
+   * @return a boolean indicating whether the model and view were successful in removing the transaction at given index 
+   */
   public boolean deleteTransaction(int index_number) {
     model.removeTransaction(index_number);
     view.deleteTransactionRow(index_number); // the row number also start from 0
