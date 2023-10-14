@@ -56,33 +56,33 @@ public class ExpenseTrackerController {
     return true;
   }
 
-  public boolean applyFilter(double filterAmount, String filterCategory)
-  {
-    if (filterCategory==null)
-    {
-      if (!InputValidation.isValidAmount(filterAmount)) {
-      return false;
-      }
-      amount_filter = new AmountFilter(filterAmount);
-      List<Transaction> filteredTransactions = amount_filter.filter(model.getTransactions());
-      view.setBackgroundColor(filteredTransactions);
-    }
+  // public boolean applyFilter(double filterAmount, String filterCategory)
+  // {
+  //   if (filterCategory==null)
+  //   {
+  //     if (!InputValidation.isValidAmount(filterAmount)) {
+  //     return false;
+  //     }
+  //     amount_filter = new AmountFilter(filterAmount);
+  //     List<Transaction> filteredTransactions = amount_filter.filter(model.getTransactions());
+  //     view.setBackgroundColor(filteredTransactions);
+  //   }
     
-    else if (filterAmount==0)
-    {
-      if (!InputValidation.isValidCategory(filterCategory)) {
-      return false;
-    }
-      category_filter = new CategoryFilter(filterCategory);
-      List<Transaction> filteredTransactions = category_filter.filter(model.getTransactions());
-      view.setBackgroundColor(filteredTransactions);
-    }
+  //   else if (filterAmount==0)
+  //   {
+  //     if (!InputValidation.isValidCategory(filterCategory)) {
+  //     return false;
+  //   }
+  //     category_filter = new CategoryFilter(filterCategory);
+  //     List<Transaction> filteredTransactions = category_filter.filter(model.getTransactions());
+  //     view.setBackgroundColor(filteredTransactions);
+  //   }
 
-    else
-    {
-      return false;
-    } 
+  //   else
+  //   {
+  //     return false;
+  //   } 
 
-  return true;
-  }
+  // return true;
+  // }
 }

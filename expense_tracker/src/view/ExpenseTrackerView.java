@@ -150,27 +150,27 @@ public class ExpenseTrackerView extends JFrame {
     this.categoryField = categoryField;
   }
 
-  public double getFilterAmountField() {
-    if(filterAmountField.getText().isEmpty()) {
-      return 0;
-    }else {
-    double amount = Double.parseDouble(filterAmountField.getText());
-    return amount;
-    }
-  }
+  // public double getFilterAmountField() {
+  //   if(filterAmountField.getText().isEmpty()) {
+  //     return 0;
+  //   }else {
+  //   double amount = Double.parseDouble(filterAmountField.getText());
+  //   return amount;
+  //   }
+  // }
 
-  public void setFilterAmountField(JFormattedTextField filterAmountField) {
-    this.filterAmountField = filterAmountField;
-  }
+  // public void setFilterAmountField(JFormattedTextField filterAmountField) {
+  //   this.filterAmountField = filterAmountField;
+  // }
 
   
-  public String getFilterCategoryField() {
-    return filterCategoryField.getText();
-  }
+  // public String getFilterCategoryField() {
+  //   return filterCategoryField.getText();
+  // }
 
-  public void setFilterCategoryField(JTextField filterCategoryField) {
-    this.filterCategoryField = filterCategoryField;
-  }
+  // public void setFilterCategoryField(JTextField filterCategoryField) {
+  //   this.filterCategoryField = filterCategoryField;
+  // }
 
   public JButton getDeleteTransactionBtn() {
     return deleteTransactionBtn;
@@ -180,20 +180,20 @@ public class ExpenseTrackerView extends JFrame {
     return filterTransactionBtn;
   }
 
-  public void setBackgroundColor(List<Transaction> filtered_t)
-  {
-    for(int i=0;i<getTransactionsTable().getRowCount();i++)
-    {
-      for(int j=0; j<filtered_t.size();j++)
-      { boolean match = true;
+  // public void setBackgroundColor(List<Transaction> filtered_t)
+  // {
+  //   for(int i=0;i<getTransactionsTable().getRowCount();i++)
+  //   {
+  //     for(int j=0; j<filtered_t.size();j++)
+  //     { boolean match = true;
 
-        if (filtered_t.get(j).equals(new Transaction((double) transactionsTable.getValueAt(i,0), (String) transactionsTable.getValueAt(i,1))))
-        {
-          transactionsTable.addRowSelectionInterval(i, i);
-        }
-      }
-    }
-  }
+  //       if (filtered_t.get(j).equals(new Transaction((double) transactionsTable.getValueAt(i,0), (String) transactionsTable.getValueAt(i,1))))
+  //       {
+  //         transactionsTable.addRowSelectionInterval(i, i);
+  //       }
+  //     }
+  //   }
+  // }
 
   public void deleteTransactionRow(int index_number) {
     this.getTableModel().removeRow(index_number);
