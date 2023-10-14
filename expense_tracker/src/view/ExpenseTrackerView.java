@@ -83,7 +83,11 @@ public class ExpenseTrackerView extends JFrame {
     add(inputPanel, BorderLayout.NORTH);
     add(new JScrollPane(transactionsTable), BorderLayout.CENTER); 
     add(buttonPanel, BorderLayout.SOUTH);
-  
+
+    //Set JTable properties 
+    transactionsTable.setRowSelectionAllowed(true);
+    transactionsTable.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+    
     // Set frame properties
     setSize(1000, 300);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -181,18 +185,29 @@ public class ExpenseTrackerView extends JFrame {
   }
 
   public void setBackgroundColor(List<Transaction> filtered_t)
-  {
-    for(int i=0;i<getTransactionsTable().getRowCount();i++)
+  { 
+    for(int i=0;i<getTransactionsTable().getRowCount()-1;i++)
     {
       for(int j=0; j<filtered_t.size();j++)
-      { boolean match = true;
-
-        if (filtered_t.get(j).equals(new Transaction((double) transactionsTable.getValueAt(i,0), (String) transactionsTable.getValueAt(i,1))))
+      { boolean match = false;
+        
+        if ((filtered_t.get(j).getAmount() == (double) transactionsTable.getValueAt(i,1)) &&
+            (filtered_t.get(j).getCategory().equals((String) transactionsTable.getValueAt(i,2))) &&
+            (filtered_t.get(j).getTimestamp().equals((String) transactionsTable.getValueAt(i,3))))
+            {
+              match = true;
+            }
+        
+        if (match)
         {
           transactionsTable.addRowSelectionInterval(i, i);
         }
+
       }
+
+      transactionsTable.setSelectionBackground(new Color(173, 255, 168));
     }
+
   }
 
   public void deleteTransactionRow(int index_number) {
