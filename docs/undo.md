@@ -1,11 +1,13 @@
 # Usability: Undo Functionality
+This markdown file was originally a [pull request message](https://github.com/xyw0025/hw2/pull/3).
 
-# homework requirements
+## homework requirements
 - User can remove any transaction altogether by selecting the row. 
 - The remove update is reflected in the Total Cost.
 
 
-# what this PR does:
+
+## what this PR does:
 Expect behavior:
 1. User select a certain row in the transaction table.
 2. User click delete transaction button.
@@ -13,7 +15,7 @@ Expect behavior:
 4. Changes also reflects in the the total cost field. 
 5. The transaction in list is deleted
 
-## view 
+### view 
 - Add a delete button at the bottom of the panel
 https://github.com/xyw0025/hw2/pull/3/commits/f02d4df182a71e7f179c14a6c7b7546cd805c2cf
 https://github.com/xyw0025/hw2/pull/3/commits/9ad5bfc714c32f787e58eea43caf7cdea0f99f0f
@@ -57,7 +59,7 @@ public class ExpenseTrackerView extends JFrame {
 ```
 
 
-## model 
+### model 
 - add method removeTransaction: takes an integer `index_number` as parameter, remove the transaction at index `index_number` in list
 
 https://github.com/xyw0025/hw2/pull/3/commits/4a3924fd87c67e61b42bbef75dc9889bda8bf053
@@ -70,7 +72,7 @@ https://github.com/xyw0025/hw2/pull/3/commits/4a3924fd87c67e61b42bbef75dc9889bda
   }
 ```
 
-## ExpenseTrackerApp.java
+### ExpenseTrackerApp.java
 - add listener to delete transaction button
 - when listener gets triggered
     - get the index of the selected row 
@@ -107,7 +109,7 @@ https://github.com/xyw0025/hw2/pull/3/commits/d6a35dd77dd6f2a20ac9ed78a0e10fb9ea
   }
 ```
 
-## Controller
+### Controller
 when ExpenseTrackerApp.java calls method in controller, meaning that the delete button is clicked and the selected row is indeed a transaction:
 https://github.com/xyw0025/hw2/pull/3/commits/d6a35dd77dd6f2a20ac9ed78a0e10fb9ead0592f
 - `controller` calls method in `model` -> delete the transaction in the list
