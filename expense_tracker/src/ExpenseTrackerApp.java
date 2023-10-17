@@ -1,5 +1,6 @@
 import javax.swing.JOptionPane;
-
+import javax.swing.JFormattedTextField;
+import javax.swing.JTextField;
 import controller.ExpenseTrackerController;
 import model.ExpenseTrackerModel;
 import view.ExpenseTrackerView;

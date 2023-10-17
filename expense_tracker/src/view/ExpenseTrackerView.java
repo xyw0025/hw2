@@ -207,6 +207,8 @@ public class ExpenseTrackerView extends JFrame {
       transactionsTable.setSelectionBackground(new Color(173, 255, 168));
     }
     
+    this.filterAmountField.setValue(0.0);
+    this.filterCategoryField.setText("");
   }
 
   public void deleteTransactionRow(int index_number) {
