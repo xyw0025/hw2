@@ -1,6 +1,6 @@
 # hw2
 
-## new functionalities 
+## New functionalities 
 ### Extensibility: Filter
 
 - amount filter\
