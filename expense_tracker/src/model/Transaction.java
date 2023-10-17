@@ -2,7 +2,6 @@ package model;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 /**
 * Transaction class that specifies the structure of the transactions
@@ -44,7 +43,7 @@ public class Transaction {
    * @return category mentioned in the transaction
    */
   public String getCategory() {
-    final String copyCategory = String.valueOf(category);
+    String copyCategory = String.valueOf(category);
     return copyCategory;
   }
   
@@ -52,7 +51,7 @@ public class Transaction {
    * @return timestamp of the transaction
    */
   public String getTimestamp() {
-    final String copyTimeStamp = String.valueOf(timestamp);
+    String copyTimeStamp = String.valueOf(timestamp);
     return copyTimeStamp;
   }
 

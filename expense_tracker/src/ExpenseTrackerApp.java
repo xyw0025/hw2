@@ -1,11 +1,10 @@
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-
+import javax.swing.JFormattedTextField;
+import javax.swing.JTextField;
 import controller.ExpenseTrackerController;
 import model.ExpenseTrackerModel;
 import view.ExpenseTrackerView;
-import model.Transaction;
-import controller.InputValidation;
+
 
 /**
  * Class to start the GUI application 
@@ -46,6 +45,18 @@ public class ExpenseTrackerApp {
 
       if (!is_deleted) {
         JOptionPane.showMessageDialog(view, "There's no such transaction in the table!");
+        view.toFront();
+      }
+    });
+
+    view.getFilterTransactionBtn().addActionListener(e -> {
+      double filterAmount = view.getFilterAmountField();
+      String filterCategory = view.getFilterCategoryField();
+
+      boolean filtered = controller.applyFilter(filterAmount, filterCategory);
+
+      if (!filtered) {
+        JOptionPane.showMessageDialog(view, "Filters are not valid!");
         view.toFront();
       }
     });

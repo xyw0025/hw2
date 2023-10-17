@@ -1,7 +1,8 @@
 package controller;
 
 import view.ExpenseTrackerView;
-
+import strategy.AmountFilter;
+import strategy.CategoryFilter;
 import java.util.List;
 
 
@@ -23,6 +24,8 @@ public class ExpenseTrackerController {
    * view object - will be utilized to update the view
    */
   private ExpenseTrackerView view;
+  private AmountFilter amount_filter;
+  private CategoryFilter category_filter;
 
   /**
    * Class constructor to initialize class variables - model and view
@@ -78,5 +81,35 @@ public class ExpenseTrackerController {
     view.deleteTransactionRow(index_number); // the row number also start from 0
     refresh();
     return true;
+  }
+
+  public boolean applyFilter(double filterAmount, String filterCategory)
+  { 
+    if (filterCategory.equals(""))
+    {
+      if (!InputValidation.isValidAmount(filterAmount)) {
+        return false;
+      }
+      amount_filter = new AmountFilter(filterAmount);
+      List<Transaction> filteredTransactions = amount_filter.filter(model.getTransactions());
+      view.setBackgroundColor(filteredTransactions);
+    }
+    
+    else if (filterAmount==0)
+    {
+      if (!InputValidation.isValidCategory(filterCategory)) {
+        return false;
+    }
+      category_filter = new CategoryFilter(filterCategory);
+      List<Transaction> filteredTransactions = category_filter.filter(model.getTransactions());
+      view.setBackgroundColor(filteredTransactions);
+    }
+
+    else
+    {
+      return false;
+    } 
+
+  return true;
   }
 }
