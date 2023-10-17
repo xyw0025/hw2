@@ -93,8 +93,8 @@ public class ExpenseTrackerController {
 
   /**
    * Function to validate the filter inputs, and call functions to filter the transactions and change background color in view
-   * @param filterAmount
-   * @param filterCategory
+   * @param filterAmount filter amount entered by the user
+   * @param filterCategory filtered category entered by the user
    * @return boolean value indicating whether the filter operation was successful or not 
    */
   public boolean applyFilter(double filterAmount, String filterCategory)
