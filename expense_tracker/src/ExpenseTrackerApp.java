@@ -6,8 +6,15 @@ import model.ExpenseTrackerModel;
 import view.ExpenseTrackerView;
 
 
+/**
+ * Class to start the GUI application 
+ */
 public class ExpenseTrackerApp {
 
+  /**
+   * Main method to instantiate the components of the Application and Listener methods
+   * @param args - Default values provided during the start of execution
+   */
   public static void main(String[] args) {
     
     // Create MVC components
@@ -33,6 +40,7 @@ public class ExpenseTrackerApp {
       }
     });
 
+    // Handle delete transaction clicks
     view.getDeleteTransactionBtn().addActionListener(e -> {
       boolean is_deleted = deleteTransaction(controller, view);
 
@@ -42,6 +50,7 @@ public class ExpenseTrackerApp {
       }
     });
 
+    // handle filter transaction clicks
     view.getFilterTransactionBtn().addActionListener(e -> {
       double filterAmount = view.getFilterAmountField();
       String filterCategory = view.getFilterCategoryField();
@@ -55,6 +64,12 @@ public class ExpenseTrackerApp {
     });
   }
 
+  /**
+   * Function called by the action listener of the delete button to remove a selected transaction from the model and the view
+   * @param controller controller to delete the transaction from model and view
+   * @param view used to get the index of selected transaction
+   * @return boolean status code indicating whether the deletion was successful or not 
+   */
   private static boolean deleteTransaction(ExpenseTrackerController controller, ExpenseTrackerView view) {
     int row_index = view.getTransactionsTable().getSelectedRow();
 
@@ -66,6 +81,12 @@ public class ExpenseTrackerApp {
     }
   }
 
+  /**
+   * Function to check whether the row number is valid (a precautionary function)
+   * @param view To access the total number of rows present in the table
+   * @param row_index Row index of the selected transaction
+   * @return boolean value specifying whether the row index is valid or not
+   */
   private static boolean checkRowNum(ExpenseTrackerView view, int row_index) {
     int row_counts = view.getTransactionsTable().getRowCount();
     return (row_index < row_counts);
