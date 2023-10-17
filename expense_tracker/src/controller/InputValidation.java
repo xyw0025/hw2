@@ -8,6 +8,7 @@ import java.util.Arrays;
 public class InputValidation {
 
   /**
+   * Function to validate the amount value
    * @param amount value entered in the amount field by the user
    * @return boolean indicating whether the value adheres by the rules or not
    */
@@ -27,6 +28,7 @@ public class InputValidation {
   }
 
   /**
+   * Function to valdidate the category value
    * @param category category entered by the user in the category input field
    * @return boolean value indicating whether it falls into the list of allowed  categories
    */

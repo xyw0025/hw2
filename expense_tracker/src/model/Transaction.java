@@ -33,6 +33,7 @@ public class Transaction {
   }
 
   /**
+   * Function to get the amount value in the transaction
    * @return amount present in the transaction
    */
   public double getAmount() {
@@ -40,6 +41,7 @@ public class Transaction {
   }
 
   /**
+   * Function to get category value in the transaction
    * @return category mentioned in the transaction
    */
   public String getCategory() {
@@ -48,6 +50,7 @@ public class Transaction {
   }
   
   /**
+   * Function to get the timestamp of the transaction
    * @return timestamp of the transaction
    */
   public String getTimestamp() {
@@ -56,6 +59,7 @@ public class Transaction {
   }
 
   /**
+   * Function to generate a timestamp in a particular format for the transaction
    * @return generates the timestamp for the newly created transaction
    */
   private String generateTimestamp() {

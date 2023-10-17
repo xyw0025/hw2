@@ -29,19 +29,28 @@ public class ExpenseTrackerView extends JFrame {
    */
   private JButton deleteTransactionBtn;
   /**
-   * Text field to enter amount present in the transaction
+   * Button object to filter transactions
    */
   private JButton filterTransactionBtn;
+  /**
+   * Text field to enter amount present in the transaction
+   */
   private JFormattedTextField amountField;
   /**
    * Text field to enter category present in the transaction
    */
   private JTextField categoryField;
   /**
-   * Model that store the transaction values in the Table cells
+   * Text field to enter filter amount 
    */
   private JFormattedTextField filterAmountField;
+  /**
+   * Text field to enter filter category 
+   */
   private JTextField filterCategoryField;
+  /**
+   * Model that store the transaction values in the Table cells
+   */
   private DefaultTableModel model;
   
 
@@ -55,6 +64,7 @@ public class ExpenseTrackerView extends JFrame {
     String[] columnNames = {"serial", "Amount", "Category", "Date"};
     this.model = new DefaultTableModel(columnNames, 0);
 
+    // creating buttons
     addTransactionBtn = new JButton("Add Transaction");
     deleteTransactionBtn = new JButton("Delete");
     filterTransactionBtn = new JButton("Filter");
@@ -66,7 +76,6 @@ public class ExpenseTrackerView extends JFrame {
     amountField = new JFormattedTextField(format);
     amountField.setColumns(10);
 
-    
     JLabel categoryLabel = new JLabel("Category:");
     categoryField = new JTextField(10);
 
@@ -195,7 +204,7 @@ public class ExpenseTrackerView extends JFrame {
 
   
   /**
-   * Function to return the category value in the amount TextField
+   * Function to return the category value in the category TextField
    * @return returns the category value entered by the user
    */
   public String getCategoryField() {
@@ -211,8 +220,8 @@ public class ExpenseTrackerView extends JFrame {
   }
 
   /**
-   * Function to access deleteTransactionBtn button object
-   * @return a JButton object to delete transactions
+   * Function to return the amount value in the filterAmountField TextField
+   * @return returns the amount value entered by the user
    */
   public double getFilterAmountField() {
     if(filterAmountField.getText().isEmpty()) {
@@ -223,33 +232,52 @@ public class ExpenseTrackerView extends JFrame {
     }
   }
 
+  /**
+  * Function to set value to the filterAmountField
+  * @param filterAmountField default value to be assigned to the filterAmountField
+  */
   public void setFilterAmountField(JFormattedTextField filterAmountField) {
     this.filterAmountField = filterAmountField;
   }
 
-  
+  /**
+   * Function to return the category value in the filter category TextField
+   * @return returns the category value entered by the user
+   */
   public String getFilterCategoryField() {
     return filterCategoryField.getText();
   }
 
+  /**
+   * Function to set value to the filterCategoryField
+   * @param filterCategoryField default value to be assigned to the filterCategoryField
+   */
   public void setFilterCategoryField(JTextField filterCategoryField) {
     this.filterCategoryField = filterCategoryField;
   }
 
+  /**
+   * Function to access deleteTransactionBtn button object
+   * @return a JButton object to delete transactions
+   */
   public JButton getDeleteTransactionBtn() {
     return deleteTransactionBtn;
   }
 
   /**
-   * Function to delete/remove an indexed row from the table
-   * @param index_number Index of the transaction to be deleted in the table
+   * Function to access filterTransactionBtn button object
+   * @return a JButton object to filter transactions
    */
   public JButton getFilterTransactionBtn() {
     return filterTransactionBtn;
   }
 
+  /**
+   * FUnction to set the background color of the filtered transactions 
+   * @param filtered_t list of all transactions that satisfy the filter criteria 
+   */
   public void setBackgroundColor(List<Transaction> filtered_t)
-  { 
+  { // Checking which table entries are in the filtered list
     for(int i=0;i<getTransactionsTable().getRowCount()-1;i++)
     {
       for(int j=0; j<filtered_t.size();j++)
@@ -261,14 +289,14 @@ public class ExpenseTrackerView extends JFrame {
             {
               match = true;
             }
-        
+        // select rows that are in the filtered list
         if (match)
         {
           transactionsTable.addRowSelectionInterval(i, i);
         }
 
       }
-
+      // change the background of all the selected rows
       transactionsTable.setSelectionBackground(new Color(173, 255, 168));
     }
     
@@ -276,6 +304,10 @@ public class ExpenseTrackerView extends JFrame {
     this.filterCategoryField.setText("");
   }
 
+  /**
+   * Function to delete/remove an indexed row from the table
+   * @param index_number Index of the transaction to be deleted in the table
+   */
   public void deleteTransactionRow(int index_number) {
     this.getTableModel().removeRow(index_number);
   }

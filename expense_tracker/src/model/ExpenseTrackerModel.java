@@ -21,6 +21,7 @@ public class ExpenseTrackerModel {
   }
 
   /**
+   * Adds a new transaction to the list
    * @param t A new transaction object to be added in the list
    */
   public void addTransaction(Transaction t) {
@@ -28,6 +29,7 @@ public class ExpenseTrackerModel {
   }
 
   /**
+   * Removes a transaction from the list
    * @param t Transaction object to be deleted from the list
    */
   public void removeTransaction(Transaction t) {
@@ -35,6 +37,7 @@ public class ExpenseTrackerModel {
   }
 
   /**
+   * Removes a transaction at given index from the list
    * @param index Index of the transaction to be removed from the list
    */
   public void removeTransaction(int index) {
@@ -42,7 +45,8 @@ public class ExpenseTrackerModel {
   }
 
   /**
-   * @return 
+   * Function to return the current list of transactions
+   * @return List of transactions (a copy)
    */
   public List<Transaction> getTransactions() {
     List<Transaction> copyTransactions = new ArrayList<>(); 

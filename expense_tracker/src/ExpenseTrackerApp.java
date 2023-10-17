@@ -40,6 +40,7 @@ public class ExpenseTrackerApp {
       }
     });
 
+    // Handle delete transaction clicks
     view.getDeleteTransactionBtn().addActionListener(e -> {
       boolean is_deleted = deleteTransaction(controller, view);
 
@@ -49,6 +50,7 @@ public class ExpenseTrackerApp {
       }
     });
 
+    // handle filter transaction clicks
     view.getFilterTransactionBtn().addActionListener(e -> {
       double filterAmount = view.getFilterAmountField();
       String filterCategory = view.getFilterCategoryField();

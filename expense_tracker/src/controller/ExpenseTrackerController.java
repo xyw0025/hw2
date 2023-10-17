@@ -24,7 +24,13 @@ public class ExpenseTrackerController {
    * view object - will be utilized to update the view
    */
   private ExpenseTrackerView view;
+  /**
+   * Instance of AmountFilter class - used to filter transactions based on amount
+   */
   private AmountFilter amount_filter;
+  /**
+   * Instance of CategotyFilter class - used to filter transactions based on category
+   */
   private CategoryFilter category_filter;
 
   /**
@@ -53,6 +59,7 @@ public class ExpenseTrackerController {
   }
 
   /**
+   * This function validates the inputs, and calls functions to add the transaction to the list and update the view
    * @param amount amount entered by the user in the amount field in the view
    * @param category category entered by the user
    * @return boolean indicating whether the transaction was added successfully in the model and the view was updated 
@@ -73,6 +80,7 @@ public class ExpenseTrackerController {
   }
 
   /**
+   * Function to delete the selected transaction and update the table view
    * @param index_number specifies the index number of transaction to be deleted 
    * @return a boolean indicating whether the model and view were successful in removing the transaction at given index 
    */
@@ -83,6 +91,12 @@ public class ExpenseTrackerController {
     return true;
   }
 
+  /**
+   * Function to validate the filter inputs, and call functions to filter the transactions and change background color in view
+   * @param filterAmount
+   * @param filterCategory
+   * @return boolean value indicating whether the filter operation was successful or not 
+   */
   public boolean applyFilter(double filterAmount, String filterCategory)
   { 
     if (filterCategory.equals(""))
