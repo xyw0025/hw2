@@ -1,0 +1,65 @@
+commit 0b11617dcc5ffc00ebf4e669b17d7e75a8b7ee68
+Author: Anshumaan Chauhan <98472023+Anshumaan-Chauhan02@users.noreply.github.com>
+Date:   Tue Oct 17 15:12:43 2023 -0400
+
+    Understandability - Javadoc (#4)
+
+commit d04efa0f19f19503c3fc2742af5876302e76b3a7
+Author: Wen Hsin-Yu <48324248+xyw0025@users.noreply.github.com>
+Date:   Tue Oct 17 14:07:02 2023 -0400
+
+    Doc: Understandability & Usability sections documents (#7)
+
+commit 713a17a55474ecbd3024d30fc59ae661c75e14e1
+Author: Anshumaan Chauhan <98472023+Anshumaan-Chauhan02@users.noreply.github.com>
+Date:   Tue Oct 17 11:41:01 2023 -0400
+
+    Extensibility  (#6)
+
+commit c90b573bd12e41c2743b9c03c224b9ffa125a66a
+Author: Anshumaan Chauhan <98472023+Anshumaan-Chauhan02@users.noreply.github.com>
+Date:   Thu Oct 12 22:11:29 2023 -0400
+
+    Modularity Bug Fix (#5)
+
+commit a1db6024b7d07a650e21136565fc05c8089e1cbb
+Author: Anshumaan Chauhan <98472023+Anshumaan-Chauhan02@users.noreply.github.com>
+Date:   Thu Oct 12 20:22:01 2023 -0400
+
+    Modularity HW2 (#2)
+
+commit fd92fe09ac4feb0d2bc965009562f79394529d83
+Author: Wen Hsin-Yu <48324248+xyw0025@users.noreply.github.com>
+Date:   Thu Oct 12 20:20:49 2023 -0400
+
+    Usability: Undo Functionality (#3)
+
+commit b21da9fb7fd47c25881d7fc014a932365cb1552b
+Author: Mahbuba Tasmin <tasmin153@gmail.com>
+Date:   Sat Sep 2 02:42:57 2023 -0400
+
+    Build file update
+
+commit ccabaffc7ff1b7098979a63fcbadf48bc04915c3
+Author: Mahbuba Tasmin <tasmin153@gmail.com>
+Date:   Tue Aug 29 14:49:22 2023 -0400
+
+    File Update
+
+commit 2574c71001a74c29f01f4a84fa99f450158f2f10
+Author: Mahbuba Tasmin <tasmin153@gmail.com>
+Date:   Wed Aug 9 14:11:14 2023 -0400
+
+    Total Cost and Serial update
+
+commit d29d2c8acb4145ce700e0456ccc334da0cad3dc2
+Author: Mahbuba Tasmin <tasmin153@gmail.com>
+Date:   Wed Aug 9 12:54:46 2023 -0400
+
+    HW2 template files
+
+commit 6a51d8019c39a33d581ce078ae8887a022ee806d
+Author: Mahbuba Tasmin <tasmin153@gmail.com>
+Date:   Tue Aug 8 21:48:41 2023 -0400
+
+    Initial commit
