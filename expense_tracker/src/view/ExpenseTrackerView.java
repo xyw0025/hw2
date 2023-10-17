@@ -1,11 +1,11 @@
 package view;
 
 import javax.swing.*;
-import javax.swing.JFormattedTextField.AbstractFormatterFactory;
+// import javax.swing.JFormattedTextField.AbstractFormatterFactory;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.DefaultTableCellRenderer;
 
-import controller.InputValidation;
+// import controller.InputValidation;
 
 import java.awt.*;
 import java.text.NumberFormat;
@@ -215,7 +215,7 @@ public class ExpenseTrackerView extends JFrame {
           public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
                                                         boolean hasFocus, int row, int column) {
               Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-              if (true) {
+              if (filtered_t.contains(value)) {
                   c.setBackground(new Color(173, 255, 168)); // Light green
               } else {
                   c.setBackground(table.getBackground());

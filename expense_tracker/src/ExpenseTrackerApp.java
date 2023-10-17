@@ -1,11 +1,11 @@
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
+// import javax.swing.table.DefaultTableModel;
 
 import controller.ExpenseTrackerController;
 import model.ExpenseTrackerModel;
 import view.ExpenseTrackerView;
-import model.Transaction;
-import controller.InputValidation;
+// import model.Transaction;
+// import controller.InputValidation;
 
 public class ExpenseTrackerApp {
 
