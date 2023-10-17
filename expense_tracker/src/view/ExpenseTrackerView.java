@@ -1,11 +1,9 @@
 package view;
 
 import javax.swing.*;
-// import javax.swing.JFormattedTextField.AbstractFormatterFactory;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.DefaultTableCellRenderer;
 
-// import controller.InputValidation;
 
 import java.awt.*;
 import java.text.NumberFormat;
@@ -86,8 +84,8 @@ public class ExpenseTrackerView extends JFrame {
     add(buttonPanel, BorderLayout.SOUTH);
 
     //Set JTable properties 
-    // transactionsTable.setRowSelectionAllowed(true);
-    // transactionsTable.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+    transactionsTable.setRowSelectionAllowed(true);
+    transactionsTable.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
     
     // Set frame properties
     setSize(1000, 300);
@@ -187,43 +185,28 @@ public class ExpenseTrackerView extends JFrame {
 
   public void setBackgroundColor(List<Transaction> filtered_t)
   { 
-    // for(int i=0;i<getTransactionsTable().getRowCount()-1;i++)
-    // {
-    //   for(int j=0; j<filtered_t.size();j++)
-    //   { boolean match = false;
+    for(int i=0;i<getTransactionsTable().getRowCount()-1;i++)
+    {
+      for(int j=0; j<filtered_t.size();j++)
+      { boolean match = false;
         
-    //     if ((filtered_t.get(j).getAmount() == (double) transactionsTable.getValueAt(i,1)) &&
-    //         (filtered_t.get(j).getCategory().equals((String) transactionsTable.getValueAt(i,2))) &&
-    //         (filtered_t.get(j).getTimestamp().equals((String) transactionsTable.getValueAt(i,3))))
-    //         {
-    //           match = true;
-    //         }
+        if ((filtered_t.get(j).getAmount() == (double) transactionsTable.getValueAt(i,1)) &&
+            (filtered_t.get(j).getCategory().equals((String) transactionsTable.getValueAt(i,2))) &&
+            (filtered_t.get(j).getTimestamp().equals((String) transactionsTable.getValueAt(i,3))))
+            {
+              match = true;
+            }
         
-    //     if (match)
-    //     {
-    //       transactionsTable.addRowSelectionInterval(i, i);
-    //     }
+        if (match)
+        {
+          transactionsTable.addRowSelectionInterval(i, i);
+        }
 
-    //   }
+      }
 
-    //   transactionsTable.setSelectionBackground(new Color(173, 255, 168));
-    // }
-
-    //TODO
-    transactionsTable.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
-          @Override
-          public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
-                                                        boolean hasFocus, int row, int column) {
-              Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-              if (filtered_t.contains(value)) {
-                  c.setBackground(new Color(173, 255, 168)); // Light green
-              } else {
-                  c.setBackground(table.getBackground());
-              }
-              return c;
-          }
-      });
-
+      transactionsTable.setSelectionBackground(new Color(173, 255, 168));
+    }
+    
   }
 
   public void deleteTransactionRow(int index_number) {
