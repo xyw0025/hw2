@@ -1,5 +1,7 @@
 # hw2
 
+```Please refer to docs/ folder for Usability section answer report and gitLog.txt file.```
+
 ## New functionalities 
 ### Extensibility: Filter
 
@@ -12,3 +14,5 @@ Now users can filter transactions by entering either amount or category, then cl
 
 ### Usability: delete transaction
 Users can delete a transaction by first selecting the row, then click on the button delete. 
+
+
